@@ -26,6 +26,13 @@ const server = http.createServer(app);
 
 // const io = new Server(server);
 
+
+app.use(cors({
+  origin: "https://coruscating-granita-9f71aa.netlify.app", // replace with your actual frontend URL
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true,  // if you use cookies
+}));
+
 const io = new Server(server, {
   cors: {
     origin: "https://coruscating-granita-9f71aa.netlify.app",
@@ -40,11 +47,7 @@ const io = new Server(server, {
 
 // app.use(cors());
 
-app.use(cors({
-  origin: "https://coruscating-granita-9f71aa.netlify.app", // replace with your actual frontend URL
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true,  // if you use cookies
-}));
+
 
 
 
