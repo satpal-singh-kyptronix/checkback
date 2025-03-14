@@ -28,11 +28,13 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "https://coruscating-granita-9f71aa.netlify.app", // Your frontend domain
+    origin: "https://coruscating-granita-9f71aa.netlify.app",
     methods: ["GET", "POST"],
     credentials: true,
   },
+  transports: ["websocket"], // Force WebSocket only
 });
+
 
 
 
